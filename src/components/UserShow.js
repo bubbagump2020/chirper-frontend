@@ -15,7 +15,10 @@ export class UserShow extends React.Component {
             }
         })
             .then(response => {response.json()})
-            .then(user => this.setState({ user: user }))
+            .then(user => {
+                console.log(user)
+                this.setState({ user: user })
+            })
         fetch(`http://localhost:3001/reviews`, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -31,7 +34,7 @@ export class UserShow extends React.Component {
         }
         return(
             <div>
-                <h1>{this.state.user.username}</h1>
+                <h1>User Page</h1>
             </div>
         )
     }
