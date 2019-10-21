@@ -34,8 +34,12 @@ export function Login(props) {
 			<form onSubmit={loginUser}>
 				<h1>Login to Chirper!</h1>
 				<div>
+					<label>Username: </label>
+					<input type="text" value={user.username} onChange={e => changeUser({ ...user, username: e.target.value})} />
+				</div>
+				<div>
 					<label>Email: </label>
-					<input type="text" value={user.name} onChange={e => changeUser({ ...user,  email: e.target.value})} />
+					<input type="text" value={user.name} onChange={e => changeUser({ ...user, email: e.target.value})} />
 				</div>
 				<div>
 					<label>Password: </label>

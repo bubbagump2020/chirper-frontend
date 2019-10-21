@@ -16,7 +16,14 @@ export class UserShow extends React.Component {
         })
             .then(response => {response.json()})
             .then(user => this.setState({ user: user }))
-    }
+        fetch(`http://localhost:3001/reviews`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(response => response.json())
+            .then( reviews => this.setState({ reviews: reviews }))
+    }   
 
     render(){
         if(this.state.user === null) {
