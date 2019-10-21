@@ -1,17 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom'
-import Login from './components/Login'
+import {Login} from './components/Login'
+import {UserShow} from './components/UserShow'
 
-function App() {
-  return (
-    <div>
-      <BrowserRouter>
-      	<Route exact path="/" component={Login} />
-      </BrowserRouter>
-    </div>
-  );
+
+class App extends React.Component{
+
+  render(){
+    return (
+      <div>
+        <BrowserRouter>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/users/:id" component={UserShow} />
+        </BrowserRouter>
+      </div>
+    );
+  }
+
 }
 
 export default App;
