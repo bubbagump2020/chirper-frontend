@@ -16,7 +16,7 @@ export class UserShow extends React.Component {
         })
             .then(response => {response.json()})
             .then(user => {
-                console.log(user)
+                
                 this.setState({ user: user })
             })
         fetch(`http://localhost:3001/reviews`, {
@@ -34,6 +34,7 @@ export class UserShow extends React.Component {
         }
         return(
             <div>
+                {console.log(this.state.reviews)}
                 <h1>User Page</h1>
             </div>
         )
