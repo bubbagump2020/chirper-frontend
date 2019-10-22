@@ -1,4 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { ReviewCollection } from './ReviewCollection'
+import SongPlayer from './SongPlayer'
+import ReviewForm from './ReviewForm'
 
 export class UserShow extends React.Component {
 
@@ -14,11 +18,10 @@ export class UserShow extends React.Component {
                 'Authorization': `Bearer ${token}`
             }
         })
-            .then(response => {response.json()})
-            .then(user => {
-                
+            .then(response => response.json())
+            .then(user => 
                 this.setState({ user: user })
-            })
+            )
         fetch(`http://localhost:3001/reviews`, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -34,8 +37,12 @@ export class UserShow extends React.Component {
         }
         return(
             <div>
-                {console.log(this.state.reviews)}
-                <h1>User Page</h1>
+
+                <h1>Welcome Back {this.state.user.username}!</h1>
+                <ReviewForm />
+                <ReviewCollection />
+                <SongPlayer />
+                <Link to="/">Logout</Link>
             </div>
         )
     }
