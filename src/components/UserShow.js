@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ReviewCollection } from './ReviewCollection'
 import SongPlayer from './SongPlayer'
+import ReviewForm from './ReviewForm'
 
 export class UserShow extends React.Component {
 
@@ -38,6 +39,7 @@ export class UserShow extends React.Component {
             <div>
 
                 <h1>Welcome Back {this.state.user.username}!</h1>
+                <ReviewForm />
                 <ReviewCollection />
                 <SongPlayer />
                 <Link to="/">Logout</Link>

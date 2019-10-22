@@ -4,7 +4,7 @@ import {Login} from './components/Login'
 import {UserShow} from './components/UserShow'
 
 const headerStyle ={
-  color: 'blue'
+  textAlign: "center"
 }
 
 class App extends React.Component{
