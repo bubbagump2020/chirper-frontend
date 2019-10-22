@@ -1,4 +1,5 @@
 import React from 'react'
+import { ReviewCollection } from './ReviewCollection'
 
 export class UserShow extends React.Component {
 
@@ -34,8 +35,8 @@ export class UserShow extends React.Component {
         }
         return(
             <div>
-                {console.log(this.state.reviews)}
                 <h1>User Page</h1>
+                <ReviewCollection />
             </div>
         )
     }
