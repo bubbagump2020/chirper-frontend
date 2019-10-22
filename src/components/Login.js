@@ -38,8 +38,6 @@ export function Login(props) {
 
 	async function createUser (e) {
 		e.preventDefault()
-		console.log(e)
-		console.log('I was clicked!')
 		let response = await fetch('http://localhost:3001/users', {
 			method: 'POST',
 			headers: {
@@ -91,6 +89,7 @@ export function Login(props) {
 					<input type="submit" value="Sign Up" />
 				</form>
 			</div>
+			
 		</div>
 	)
 

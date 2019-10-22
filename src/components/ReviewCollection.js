@@ -6,7 +6,7 @@ export class ReviewCollection extends React.Component {
     render(){
         return(
             <div>
-                <h1>This is the Collection of Reviews</h1>
+                <h2>Your Reviews</h2>
                 <ReviewCard />
             </div>
         )
