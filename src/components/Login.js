@@ -1,7 +1,33 @@
 import React, { useState } from 'react'
+import Container from '@material-ui/core/Container'
+import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+
+const useStyles = makeStyles(theme => ({
+	container: {
+	  display: 'flex',
+	  flexWrap: 'wrap',
+	},
+	textField: {
+	  marginLeft: theme.spacing(1),
+	  marginRight: theme.spacing(1),
+	  width: 200,
+	},
+	button: {
+		margin: theme.spacing(1),
+	},
+	dense: {
+	  marginTop: 19,
+	},
+	menu: {
+	  width: 200,
+	},
+  }));
 
 export function Login(props) {
-
+	const classes = useStyles();
+  
 	const [user, changeUser] = useState({
 		username: '',
 		email: '',
@@ -52,7 +78,7 @@ export function Login(props) {
 	}
 
 	return(
-		<div>
+		<Container>
 			<div>
 				<form onSubmit={loginUser}>
 					<h1>Login to Chirper!</h1>
@@ -75,22 +101,20 @@ export function Login(props) {
 				<form onSubmit={createUser}>
 					<h1>Signup for Chirper!</h1>
 					<div>
-						<label>Username: </label>
-						<input type="text" value={newUser.username} onChange={e => changeNewUser({ ...newUser, username: e.target.value })} />
+						<TextField label="Username" className={classes.textField} value={newUser.username} onChange={e => changeNewUser({ ...newUser, username: e.target.value})} />
 					</div>
 					<div>
-						<label>Email: </label>
-						<input type="text" value={newUser.email} onChange={e => changeNewUser({ ...newUser, email: e.target.value})} />
+						<TextField label="Email" className={classes.textField} value={newUser.email} onChange={e => changeNewUser({ ...newUser, email: e.target.value })} />
 					</div>
 					<div>
-						<label>Password: </label>
-						<input type="password" value={newUser.password} onChange={e => changeNewUser({ ...newUser, password: e.target.value})} />
+						<TextField label="Password" className={classes.textField} value={newUser.password} onChange={e => changeNewUser({ ...newUser, password: e.target.value })} />
 					</div>
-					<input type="submit" value="Sign Up" />
+					<div>
+						<input type="submit" value="Sign Up" />
+					</div>
 				</form>
 			</div>
-			
-		</div>
+		</Container>
 	)
 
 
