@@ -39,8 +39,8 @@ export class UserShow extends React.Component {
             <div>
 
                 <h1>Welcome Back {this.state.user.username}!</h1>
-                <ReviewForm />
-                <ReviewCollection />
+                <ReviewForm userID={this.state.user.id}/>
+                <ReviewCollection reviews={this.state.reviews}/>
                 <SongPlayer />
                 <Link to="/">Logout</Link>
             </div>
