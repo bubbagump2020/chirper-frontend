@@ -39,13 +39,11 @@ class ReviewForm extends React.Component{
         })
         .then(response => response.json())
         .then(review => {
-            console.log(review)
+            this.props.addReview(review)
         })
     }
 
     render(){
-        // console.log(this.state.title)
-        // console.log(this.state.content)
         return(
             <div>
                 <h2>This is the Form to add reviews</h2>

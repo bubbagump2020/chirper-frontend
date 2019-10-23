@@ -7,7 +7,11 @@ export class ReviewCollection extends React.Component {
         return(
             <div>
                 <h2>Your Reviews</h2>
-                <ReviewCard />
+                {this.props.reviews.map(review => {
+                    return(
+                        <ReviewCard {...review} key={review.id}/>
+                    )
+                })}
             </div>
         )
     }
