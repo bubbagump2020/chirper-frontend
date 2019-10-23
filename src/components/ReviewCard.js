@@ -5,7 +5,8 @@ export class ReviewCard extends React.Component{
     render(){
         return(
             <div>
-                <h3>These are the Review Cards</h3>
+                <h4>{this.props.title}</h4>
+                <p>{this.props.content}</p>
             </div>
         )
     }

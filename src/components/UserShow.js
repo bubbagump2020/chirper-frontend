@@ -31,17 +31,24 @@ export class UserShow extends React.Component {
             .then( reviews => this.setState({ reviews: reviews }))
     }   
 
+    addReviewToCollection = (review) => {
+        this.setState({
+            reviews: [
+                ...this.state.reviews, review 
+            ]
+        })
+    }
+
     render(){
         if(this.state.user === null) {
             return <h1>Loading...</h1>
         }
         return(
             <div>
-
                 <h1>Welcome Back {this.state.user.username}!</h1>
-                <ReviewForm userID={this.state.user.id}/>
-                <ReviewCollection reviews={this.state.reviews}/>
+                <ReviewForm userID={this.state.user.id} addReview={this.addReviewToCollection} />
                 <SongPlayer />
+                <ReviewCollection reviews={this.state.reviews}/>
                 <Link to="/">Logout</Link>
             </div>
         )
