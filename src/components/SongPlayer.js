@@ -8,7 +8,7 @@ class SongPlayer extends React.Component{
 
     render(){
         return(
-            <h4>This is the SongPlayer component</h4>
+            <h4></h4>
         )
     }
 

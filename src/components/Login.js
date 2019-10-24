@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
 
 export function Login(props) {
 
@@ -54,40 +55,40 @@ export function Login(props) {
 	return(
 		<div>
 			<div>
-				<form onSubmit={loginUser}>
-					<h1>Login to Chirper!</h1>
-					<div>
-						<label>Username: </label>
-						<input type="text" value={user.username} onChange={e => changeUser({ ...user, username: e.target.value})} />
-					</div>
-					<div>
-						<label>Email: </label>
-						<input type="text" value={user.name} onChange={e => changeUser({ ...user, email: e.target.value})} />
-					</div>
-					<div>
-						<label>Password: </label>
-						<input type="password" value={user.password} onChange={e => changeUser({ ...user, password: e.target.value})} />
-					</div>
-					<input type="submit" value="Sign In" />
-				</form>
+				<Form onSubmit={loginUser} className="form1">
+					<h1 style={{color: "#1DB954"}}>Login to Chirper!</h1>
+					<FormGroup>
+						<Label style={{color: "#1DB954", display: "inline-block", width: "140px", textAlign: "center" }}>Username: </Label>
+						<Input type="text" value={user.username} onChange={e => changeUser({ ...user, username: e.target.value})} />
+					</FormGroup>
+					<FormGroup>
+						<Label style={{color: "#1DB954"}}>Email: </Label>
+						<Input type="text" value={user.name} onChange={e => changeUser({ ...user, email: e.target.value})} />
+					</FormGroup>
+					<FormGroup>
+						<Label style={{color: "#1DB954"}}>Password: </Label>
+						<Input type="password" value={user.password} onChange={e => changeUser({ ...user, password: e.target.value})} />
+					</FormGroup>
+					<Button><Input style={{color: "#1DB954"}} type="submit" value="Sign In"/></Button>
+				</Form>
 			</div>
 			<div>
-				<form onSubmit={createUser}>
-					<h1>Signup for Chirper!</h1>
-					<div>
-						<label>Username: </label>
-						<input type="text" value={newUser.username} onChange={e => changeNewUser({ ...newUser, username: e.target.value })} />
-					</div>
-					<div>
-						<label>Email: </label>
-						<input type="text" value={newUser.email} onChange={e => changeNewUser({ ...newUser, email: e.target.value})} />
-					</div>
-					<div>
-						<label>Password: </label>
-						<input type="password" value={newUser.password} onChange={e => changeNewUser({ ...newUser, password: e.target.value})} />
-					</div>
-					<input type="submit" value="Sign Up" />
-				</form>
+				<Form onSubmit={createUser} className="form2">
+					<h1 style={{color: "#1DB954"}}>Signup for Chirper!</h1>
+					<FormGroup>
+						<Label style={{color: "#1DB954"}} >Username: </Label>
+						<Input type="text" value={newUser.username} onChange={e => changeNewUser({ ...newUser, username: e.target.value })} />
+					</FormGroup>
+					<FormGroup>
+						<Label style={{color: "#1DB954"}}>Email: </Label>
+						<Input style={{color: "#1DB954"}} type="text" value={newUser.email} onChange={e => changeNewUser({ ...newUser, email: e.target.value})} />
+					</FormGroup>
+					<FormGroup>
+						<Label style={{color: "#1DB954"}}>Password: </Label>
+						<Input type="password" value={newUser.password} onChange={e => changeNewUser({ ...newUser, password: e.target.value})} />
+					</FormGroup>
+					<Button><input style={{color: "#1DB954"}} type="submit" value="Sign Up" /></Button>
+				</Form>
 			</div>
 			
 		</div>

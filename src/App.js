@@ -3,8 +3,10 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import {Login} from './components/Login'
 import {UserShow} from './components/UserShow'
 
+
 const headerStyle ={
-  textAlign: "center"
+  textAlign: "center",
+  backgroundColor: "black"
 }
 
 class App extends React.Component{
