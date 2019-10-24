@@ -14,14 +14,19 @@ export class UserShow extends React.Component {
     componentDidMount(){
         const token = localStorage.getItem('token')
         fetch(`http://localhost:3001/users/${this.props.match.params.id}`, {
+            credentials: 'include',
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
             .then(response => response.json())
-            .then(user => 
+            .then(({ user, spotify_token }) => {
+                if(!spotify_token){
+                    console.log(typeof user)
+                    //window.open('http://localhost:3001/auth/spotify')
+                }
                 this.setState({ user: user })
-            )
+            })
         fetch(`http://localhost:3001/reviews`, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -40,6 +45,8 @@ export class UserShow extends React.Component {
     }
 
     render(){
+        console.log(this.state.user)
+        
         if(this.state.user === null) {
             return <h1>Loading...</h1>
         }

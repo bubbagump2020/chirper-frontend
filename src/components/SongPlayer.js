@@ -1,6 +1,6 @@
 import React from 'react'
 import SpotifyPlayer from 'react-spotify-player'
-
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
     
 
@@ -8,12 +8,17 @@ import SpotifyPlayer from 'react-spotify-player'
 class SongPlayer extends React.Component {
 
 
-    componentDidMount() {
+    // componentDidMount() {
+    //     fetch('http://localhost:3001/auth/spotify')
+    //         .then(response => response.json())
+    //         .then(data => console.log(data))
+    // }
+
+    fetchSpotify = (e) => {
+        e.preventDefault()
         fetch('http://localhost:3001/auth/spotify')
             .then(response => response.json())
-            .then(response => {
-                console.log(response)
-            })
+            .then(data => console.log(data))
     }
 
 
@@ -21,7 +26,7 @@ class SongPlayer extends React.Component {
     render() {
         return (
             <div>
-                
+                <button onClick={e => this.fetchSpotify(e)}>Click me for Spotify!</button>
             </div>
         )
     }
