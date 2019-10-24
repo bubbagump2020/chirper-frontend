@@ -1,6 +1,6 @@
 import React from 'react'
 import SpotifyPlayer from 'react-spotify-player'
-
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
     
 
@@ -9,20 +9,17 @@ class SongPlayer extends React.Component {
 
 
 
-    componentDidMount() {
-        fetch('http://localhost:3001/auth/spotify')
-            .then(response => response.json())
-            .then(response => {
-                console.log(response)
-            })
-    }
-
-
-
     render() {
         return (
             <div>
-                
+               {console.log(this.props)}
+               {this.props.playlists.map( playlist => {
+                   return(
+                       <div>
+                           {playlist.name}
+                        </div>
+                   )
+               })}
             </div>
 
         )

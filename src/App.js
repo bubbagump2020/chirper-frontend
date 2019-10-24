@@ -16,7 +16,8 @@ class App extends React.Component{
       <div style={headerStyle}>
           <BrowserRouter>
             <Route exact path="/" component={Login} />
-            <Route exact path="/users/:id" component={UserShow} />
+            <Route exact path="/users/" component={UserShow} />
+            <Route exact path="/users/:access_token" component={UserShow} />
           </BrowserRouter>
       </div>
     );
