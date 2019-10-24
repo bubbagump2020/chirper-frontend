@@ -14,10 +14,10 @@ class App extends React.Component{
   render(){
     return (
       <div style={headerStyle}>
-        <BrowserRouter>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/users/:id" component={UserShow} />
-        </BrowserRouter>
+          <BrowserRouter>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/users/:id" component={UserShow} />
+          </BrowserRouter>
       </div>
     );
   }

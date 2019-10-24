@@ -1,8 +1,37 @@
 import React, { useState } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
+
+  import { Button, Form, FormGroup, Label, Input, FormText, Col } from 'reactstrap';
+
+import Container from '@material-ui/core/Container'
+import { makeStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
+
+
+const useStyles = makeStyles(theme => ({
+	container: {
+	  display: 'flex',
+	  flexWrap: 'wrap',
+	},
+	textField: {
+	  marginLeft: theme.spacing(1),
+	  marginRight: theme.spacing(1),
+	  width: 200,
+	},
+	button: {
+		margin: theme.spacing(1),
+	},
+	dense: {
+	  marginTop: 19,
+	},
+	menu: {
+	  width: 200,
+	},
+  }));
 
 export function Login(props) {
-
+	const classes = useStyles();
+  
 	const [user, changeUser] = useState({
 		username: '',
 		email: '',
@@ -53,7 +82,7 @@ export function Login(props) {
 	}
 
 	return(
-		<div>
+		<Container>
 			<div>
 				<Form onSubmit={loginUser} className="form1">
 					<h1 style={{color: "#1DB954"}}>Login to Chirper!</h1>
@@ -73,6 +102,7 @@ export function Login(props) {
 				</Form>
 			</div>
 			<div>
+
 				<Form onSubmit={createUser} className="form2">
 					<h1 style={{color: "#1DB954"}}>Signup for Chirper!</h1>
 					<FormGroup>
@@ -89,9 +119,9 @@ export function Login(props) {
 					</FormGroup>
 					<Button><input style={{color: "#1DB954"}} type="submit" value="Sign Up" /></Button>
 				</Form>
+
 			</div>
-			
-		</div>
+		</Container>
 	)
 
 

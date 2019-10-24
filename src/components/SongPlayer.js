@@ -1,14 +1,30 @@
 import React from 'react'
-
-class SongPlayer extends React.Component{
-
-
-    // This is going to have the Spotify API call.
+import SpotifyPlayer from 'react-spotify-player'
 
 
-    render(){
-        return(
-            <h4></h4>
+    
+
+
+class SongPlayer extends React.Component {
+
+
+
+    componentDidMount() {
+        fetch('http://localhost:3001/auth/spotify')
+            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+            })
+    }
+
+
+
+    render() {
+        return (
+            <div>
+                
+            </div>
+
         )
     }
 
