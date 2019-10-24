@@ -8,11 +8,6 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 class SongPlayer extends React.Component {
 
 
-    
-
-    
-
-
 
     render() {
         return (
@@ -26,6 +21,7 @@ class SongPlayer extends React.Component {
                    )
                })}
             </div>
+
         )
     }
 
